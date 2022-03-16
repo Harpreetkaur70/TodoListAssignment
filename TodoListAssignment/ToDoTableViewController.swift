@@ -10,6 +10,7 @@ import CoreData
 class ToDoTableViewController: UITableViewController {
 
     var persistentContainer: NSPersistentContainer!
+    
     var tasks = [TodoTask]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -19,7 +20,7 @@ class ToDoTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    @IBAction func Edit(_ sender: Any) {
+    @IBAction func Edit(_ sender: Any) {//Editig Toogle Button
         if isEditing{
             (sender as AnyObject).setTitle("Edit", for: .normal)
             setEditing(false, animated: true)
