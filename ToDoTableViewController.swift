@@ -10,24 +10,28 @@ import CoreData
 class ToDoTableViewController: UITableViewController {
 
     var persistentContainer: NSPersistentContainer!
-    var tasks = [Todotask]()
+    var tasks = [TodoTask]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        let request: NSFetchRequest<Todotask> = Todotask.fetchRequest()
-        let moc = persistentContainer.viewContext
-        
-        guard
-            let results = try? moc.fetch(request)
-        else {return}
-        
-        tasks = results
-        
-        tableView.reloadData()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+           // Uncomment the following line to preserve selection between presentations
+         
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        let request: NSFetchRequest<TodoTask> = TodoTask.fetchRequest()
+        let moc = persistentContainer.viewContext
+
+        guard
+            let results = try? moc.fetch(request)
+        else {return}
+
+        tasks = results
+
+        tableView.reloadData()
+     
     }
 
     // MARK: - Table view data source
@@ -46,13 +50,13 @@ class ToDoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDo", for: indexPath)
         let title = tasks[indexPath.row].title
-        
         cell.textLabel?.text = title
+        
         // Configure the cell...
 
         return cell
     }
-    
+  
 
     /*
     // Override to support conditional editing of the table view.

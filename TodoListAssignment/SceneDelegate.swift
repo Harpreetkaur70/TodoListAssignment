@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  TodoListAssignment
+//  MovieTime
 //
-//  Created by user205769 on 3/16/22.
+//  Created by Cambrian on 2022-02-24.
 //
 
 import UIKit
@@ -17,6 +17,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
+        
+        let persistentContainer = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
+        
+        let navController = window?.rootViewController as! UINavigationController
+        let famView = navController.topViewController as! ToDoTableViewController
+        famView.persistentContainer = persistentContainer
+        
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -52,4 +59,5 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
 }
+
 
