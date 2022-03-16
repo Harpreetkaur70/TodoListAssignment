@@ -6,12 +6,23 @@
 //
 
 import UIKit
-
+import CoreData
 class ToDoTableViewController: UITableViewController {
 
+    var persistentContainer: NSPersistentContainer!
+    var tasks = [Todotask]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        let request: NSFetchRequest<Todotask> = Todotask.fetchRequest()
+        let moc = persistentContainer.viewContext
+        
+        guard
+            let results = try? moc.fetch(request)
+        else {return}
+        
+        tasks = results
+        
+        tableView.reloadData()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,18 +39,20 @@ class ToDoTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return tasks.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ToDo", for: indexPath)
+        let title = tasks[indexPath.row].title
+        
+        cell.textLabel?.text = title
         // Configure the cell...
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
