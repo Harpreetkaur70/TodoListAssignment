@@ -77,52 +77,47 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Stg-q9-pFI">
-                                <rect key="frame" x="93" y="185" width="35" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HU8-Ed-mmq">
-                                <rect key="frame" x="178" y="178" width="188" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="OLO-p3-uQj">
-                                <rect key="frame" x="161" y="243" width="213" height="162"/>
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="OLO-p3-uQj">
+                                <rect key="frame" x="178" y="166" width="213" height="169"/>
                             </datePicker>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TrW-7J-Esk">
-                                <rect key="frame" x="86" y="321" width="36" height="21"/>
+                                <rect key="frame" x="93" y="202" width="36" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NG5-Me-ZtK">
-                                <rect key="frame" x="8" y="447" width="374" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
-                                <connections>
-                                    <action selector="addMember:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cTj-UN-C8C"/>
-                                    <action selector="addtask:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jHE-vo-DZx"/>
-                                </connections>
-                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="9yZ-sp-L7e">
                                 <rect key="frame" x="178" y="110" width="188" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NG5-Me-ZtK">
+                                <rect key="frame" x="8" y="382" width="374" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="1Il-Jv-Hax"/>
+                                    <constraint firstAttribute="width" constant="374" id="tFp-xH-QK2"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Save"/>
+                                <connections>
+                                    <action selector="addMember:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cTj-UN-C8C"/>
+                                    <action selector="addtask:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jHE-vo-DZx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="NG5-Me-ZtK" firstAttribute="top" secondItem="OLO-p3-uQj" secondAttribute="bottom" constant="42" id="401-hE-xRW"/>
+                            <constraint firstItem="NG5-Me-ZtK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="D81-9P-NDa"/>
+                            <constraint firstItem="NG5-Me-ZtK" firstAttribute="top" secondItem="OLO-p3-uQj" secondAttribute="bottom" constant="47" id="EN4-RW-sIw"/>
                             <constraint firstItem="NG5-Me-ZtK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="KTj-Qj-C7O"/>
                             <constraint firstItem="NG5-Me-ZtK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="OCx-A3-BTI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NG5-Me-ZtK" secondAttribute="trailing" constant="8" id="STV-O2-3hZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="NG5-Me-ZtK" secondAttribute="bottom" constant="397" id="lnG-fa-WqK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NG5-Me-ZtK" secondAttribute="trailing" constant="8" id="nje-6N-l3b"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="NG5-Me-ZtK" secondAttribute="trailing" constant="8" id="tOF-lt-QFl"/>
                         </constraints>
                     </view>
@@ -130,13 +125,12 @@
                     <connections>
                         <outlet property="addtask" destination="NG5-Me-ZtK" id="6L0-bB-2t6"/>
                         <outlet property="datepicker" destination="OLO-p3-uQj" id="p6n-Ue-6RB"/>
-                        <outlet property="tasktext" destination="HU8-Ed-mmq" id="UvS-vL-PN4"/>
                         <outlet property="titletext" destination="9yZ-sp-L7e" id="p9s-eL-vCQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="928" y="345"/>
+            <point key="canvasLocation" x="927.69230769230762" y="344.78672985781986"/>
         </scene>
     </scenes>
     <resources>

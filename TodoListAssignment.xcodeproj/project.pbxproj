@@ -15,6 +15,8 @@
 		850B157F27E21F28000400BE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 850B157D27E21F28000400BE /* LaunchScreen.storyboard */; };
 		850B158727E2214B000400BE /* ToDoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B158627E2214B000400BE /* ToDoTableViewController.swift */; };
 		850B158A27E23D64000400BE /* Todo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 850B158827E23D64000400BE /* Todo.xcdatamodeld */; };
+		850B159127E25839000400BE /* TodoTask+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B158F27E25839000400BE /* TodoTask+CoreDataClass.swift */; };
+		850B159227E25839000400BE /* TodoTask+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 850B159027E25839000400BE /* TodoTask+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		850B158027E21F28000400BE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		850B158627E2214B000400BE /* ToDoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoTableViewController.swift; sourceTree = "<group>"; };
 		850B158927E23D64000400BE /* Todo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Todo.xcdatamodel; sourceTree = "<group>"; };
+		850B158F27E25839000400BE /* TodoTask+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TodoTask+CoreDataClass.swift"; path = "TodoListAssignment/TodoTask+CoreDataClass.swift"; sourceTree = "<group>"; };
+		850B159027E25839000400BE /* TodoTask+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "TodoTask+CoreDataProperties.swift"; path = "TodoListAssignment/TodoTask+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +48,8 @@
 		850B156327E21F26000400BE = {
 			isa = PBXGroup;
 			children = (
+				850B158F27E25839000400BE /* TodoTask+CoreDataClass.swift */,
+				850B159027E25839000400BE /* TodoTask+CoreDataProperties.swift */,
 				850B158627E2214B000400BE /* ToDoTableViewController.swift */,
 				850B156E27E21F26000400BE /* TodoListAssignment */,
 				850B156D27E21F26000400BE /* Products */,
@@ -144,6 +150,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				850B159227E25839000400BE /* TodoTask+CoreDataProperties.swift in Sources */,
+				850B159127E25839000400BE /* TodoTask+CoreDataClass.swift in Sources */,
 				850B157427E21F26000400BE /* ViewController.swift in Sources */,
 				850B158A27E23D64000400BE /* Todo.xcdatamodeld in Sources */,
 				850B157027E21F26000400BE /* AppDelegate.swift in Sources */,
