@@ -46,7 +46,7 @@
                                 <rect key="frame" x="288" y="5" width="86" height="34.333333333333336"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Edit"/>
                             </button>
                             <connections>
                                 <action selector="Edit:" destination="wGX-bW-poQ" id="tSQ-Xa-aLx"/>
