@@ -58,7 +58,7 @@ class ToDoTableViewController: UITableViewController {
         return tasks.count
     }
 
-    
+    //asigning text into tableView cell
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDo", for: indexPath)
         let title = tasks[indexPath.row].title
@@ -81,11 +81,12 @@ class ToDoTableViewController: UITableViewController {
     
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        //Segue created for tableView
         let context = NSManagedObjectContext()
         if editingStyle == .delete {
             // Delete the row from the data source
             if let Value = tasks[indexPath.row] as? NSManagedObject {
-                             context.delete(Value)
+                             context.delete(Value)  //Deleting row from Core Data
             }
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
