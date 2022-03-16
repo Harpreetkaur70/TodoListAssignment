@@ -19,6 +19,17 @@ class ToDoTableViewController: UITableViewController {
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
+    @IBAction func Edit(_ sender: Any) {
+        if isEditing{
+            (sender as AnyObject).setTitle("Edit", for: .normal)
+            setEditing(false, animated: true)
+            
+        }else{
+            (sender as AnyObject).setTitle("Done", for: .normal)
+            setEditing(true, animated: true)
+            
+        }
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         let request: NSFetchRequest<TodoTask> = TodoTask.fetchRequest()
@@ -66,17 +77,21 @@ class ToDoTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        let context = NSManagedObjectContext()
         if editingStyle == .delete {
             // Delete the row from the data source
+            if let Value = tasks[indexPath.row] as? NSManagedObject {
+                             context.delete(Value)
+            }
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
-    */
+    
 
     /*
     // Override to support rearranging the table view.
@@ -98,8 +113,8 @@ class ToDoTableViewController: UITableViewController {
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let tasksegue = segue.destination as? ViewController {
-            tasksegue.persistentContainer = persistentContainer
+        if let addTask = segue.destination as? AddTaskViewController {
+            addTask.persistentContainer = persistentContainer
         }
        
     }

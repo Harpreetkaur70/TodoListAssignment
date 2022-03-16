@@ -40,7 +40,19 @@
                             <outlet property="delegate" destination="wGX-bW-poQ" id="YCy-wZ-U5Z"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Todo List" id="1eW-Up-END"/>
+                    <navigationItem key="navigationItem" title="Todo List" id="1eW-Up-END">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="NAd-cs-FWa">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="K1d-eV-GNJ">
+                                <rect key="frame" x="288" y="5" width="86" height="34.333333333333336"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                            </button>
+                            <connections>
+                                <action selector="Edit:" destination="wGX-bW-poQ" id="tSQ-Xa-aLx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVl-a1-Qbb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -62,10 +74,10 @@
             </objects>
             <point key="canvasLocation" x="-1096" y="345"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Task View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="TodoListAssignment" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="AddTaskViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
