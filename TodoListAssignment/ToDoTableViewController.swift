@@ -26,7 +26,7 @@ class ToDoTableViewController: UITableViewController {
             setEditing(false, animated: true)
             
         }else{
-            (sender as AnyObject).setTitle("Done", for: .normal)
+            (sender as AnyObject).setTitle("Completed", for: .normal)
             setEditing(true, animated: true)
             
         }
