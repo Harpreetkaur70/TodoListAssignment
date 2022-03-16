@@ -20,8 +20,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let persistentContainer = (UIApplication.shared.delegate as? AppDelegate)?.persistentContainer
         
-        let navController = window?.rootViewController as! UINavigationController
-        let famView = navController.topViewController as! ToDoTableViewController
+        let navController = window?.rootViewController as! UINavigationController // adding navigation comtroller as a rootViewController
+        let famView = navController.topViewController as! ToDoTableViewController // top view controller is topViewController
         famView.persistentContainer = persistentContainer
         
     }
