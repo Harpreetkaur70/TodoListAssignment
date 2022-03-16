@@ -24,7 +24,7 @@ class AddTaskViewController: UIViewController {
     moc.perform {
         let tasks = TodoTask(context: moc)
         tasks.title = self.titletext.text  // getting title input from the user
-        tasks.date = self.datepicker.date //getting value of date from date picker
+        tasks.date = self.datepicker.date // storing the value selected date from date picker
         
         do {
             try moc.save()
