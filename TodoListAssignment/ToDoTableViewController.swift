@@ -66,8 +66,17 @@ class ToDoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ToDo", for: indexPath)
         let title = tasks[indexPath.row].title
-        cell.textLabel?.text = title
+        let date = tasks[indexPath.row].date
         
+        if date?.timeIntervalSinceNow.sign == .minus{
+        let attributeString: NSMutableAttributedString = NSMutableAttributedString(string: title!)
+            attributeString.addAttribute(NSAttributedString.Key.strikethroughStyle, value: 2, range: NSRange(location: 0, length: attributeString.length))
+        
+        cell.textLabel?.attributedText = attributeString
+        }
+        else if date?.timeIntervalSinceNow.sign == .plus{
+            cell.textLabel?.text = title
+        }
         // Configure the cell...
 
         return cell
