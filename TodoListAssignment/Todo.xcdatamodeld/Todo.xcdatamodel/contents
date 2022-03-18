@@ -2,10 +2,9 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19574" systemVersion="20G417" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="TodoTask" representedClassName="TodoTask" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="task" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="TodoTask" inverseName="task" inverseEntity="TodoTask"/>
+        <attribute name="title" optional="YES" attributeType="String" defaultValueString="no task Added"/>
     </entity>
     <elements>
-        <element name="TodoTask" positionX="-45" positionY="0" width="128" height="74"/>
+        <element name="TodoTask" positionX="-45" positionY="0" width="128" height="59"/>
     </elements>
 </model>
