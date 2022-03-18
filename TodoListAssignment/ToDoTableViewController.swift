@@ -99,19 +99,13 @@ class ToDoTableViewController: UITableViewController {
         if editingStyle == .delete {
             // Delete the row from the data source
             
-            
+            let objects: [NSManagedObject] =
             let moc = persistentContainer.viewContext
+            moc.delete(object)
+
+            // Save the deletions to the persistent store
+            try moc.save()
             
-            moc.performAndWait{
-                
-                self.tasks.remove(at: indexPath.row)
-                            
-                do {
-                    try moc.save()
-                } catch {
-                    moc.rollback()
-                }
-            }
             tableView.deleteRows(at: [indexPath], with: .fade)
             }
         
