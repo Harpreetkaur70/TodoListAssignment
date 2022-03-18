@@ -41,17 +41,33 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Todo List" id="1eW-Up-END">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="NAd-cs-FWa">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="K1d-eV-GNJ">
-                                <rect key="frame" x="288" y="5" width="86" height="34.333333333333336"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Edit"/>
-                            </button>
-                            <connections>
-                                <action selector="Edit:" destination="wGX-bW-poQ" id="tSQ-Xa-aLx"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem style="plain" id="jgf-wG-Xxm">
+                                <view key="customView" contentMode="scaleToFill" id="Dgf-ts-dwc">
+                                    <rect key="frame" x="288" y="5.6666666666666679" width="86" height="33"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hzb-w3-bmp">
+                                            <rect key="frame" x="-14" y="-1" width="67" height="31"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <state key="normal" title="Button"/>
+                                            <buttonConfiguration key="configuration" style="plain" title="Edit"/>
+                                            <connections>
+                                                <action selector="Edit:" destination="wGX-bW-poQ" eventType="touchUpInside" id="cpq-aA-5tI"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                            </barButtonItem>
+                            <barButtonItem style="plain" id="Cso-SM-2oO">
+                                <view key="customView" contentMode="scaleToFill" id="gL7-5z-E1l">
+                                    <rect key="frame" x="194" y="5.6666666666666679" width="86" height="33"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                </view>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UVl-a1-Qbb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

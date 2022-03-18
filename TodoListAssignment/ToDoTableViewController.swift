@@ -12,6 +12,21 @@ class ToDoTableViewController: UITableViewController {
     var persistentContainer: NSPersistentContainer!
     
     var tasks = [TodoTask]()
+
+    
+    @IBAction func Edit(_ sender: UIButton) {
+        if isEditing{
+            sender.setTitle("Edit", for: .normal)
+            setEditing(false, animated: true)
+            
+        }else{
+            sender.setTitle("Done", for: .normal)
+            setEditing(true, animated: true)
+            
+        }
+    }
+    
+        
     override func viewDidLoad() {
         super.viewDidLoad()
            // Uncomment the following line to preserve selection between presentations
@@ -19,17 +34,6 @@ class ToDoTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
-    }
-    @IBAction func Edit(_ sender: Any) {//Editig Toogle Button
-        if isEditing{
-            (sender as AnyObject).setTitle("Edit", for: .normal)
-            setEditing(false, animated: true)
-            
-        }else{
-            (sender as AnyObject).setTitle("Completed", for: .normal)
-            setEditing(true, animated: true)
-            
-        }
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -82,14 +86,27 @@ class ToDoTableViewController: UITableViewController {
     // Override to support editing the table view.
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         //Segue created for tableView
-        let context = NSManagedObjectContext()
+        
         if editingStyle == .delete {
             // Delete the row from the data source
-            if let Value = tasks[indexPath.row] as? NSManagedObject {
-                             context.delete(Value)  //Deleting row from Core Data
+            
+            
+            let moc = persistentContainer.viewContext
+            
+            moc.performAndWait{
+                
+                self.tasks.remove(at: indexPath.row)
+                            
+                do {
+                    try moc.save()
+                } catch {
+                    moc.rollback()
+                }
             }
             tableView.deleteRows(at: [indexPath], with: .fade)
-        } else if editingStyle == .insert {
+            }
+        
+         else if editingStyle == .insert {
             // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
         }    
     }
